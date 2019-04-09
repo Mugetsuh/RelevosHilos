@@ -6,14 +6,15 @@
 package com.mycompany.relevos;
 
 /**
- *
- * @author German
+ * Clase que ejecuta la aplicación
+ * @author German Garcia
+ * @author Diego Rodriguez
  */
 public class Main {
 
     public static void main(String[] args){
-        Principal p = new Principal();
-        p.principal();
+        Principal principal = new Principal();
+        principal.principal();
     }
     
 }

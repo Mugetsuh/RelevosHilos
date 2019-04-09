@@ -6,59 +6,97 @@
 package com.mycompany.relevos;
 
 /**
- *
- * @author German
+ * Clase que contiene la información de todos los equipos de la carrera
+ * @author German Garcia
+ * @author Diego Rodriguez
  */
 public class Equipo {
-    
+
+    /**
+     * Almacena el nombre del equipo
+     */
     private String nombre;
-    private String inicio;
-    private int posicionActual;
 
-    public Equipo(String nombre, String inicio) {
-        this.nombre = nombre;
-        this.inicio = inicio;
-        this.posicionActual = 0;
-    }
-    
-    public synchronized String Impresion(){
-        String imprimir= " ";
-        imprimir = "\nGrupo : " + inicio + " ";
-        for (int i = 0; i <= 100; i++) {
-            if (i == 33){
-                imprimir += "||";
-            } else if (i == 66){
-                imprimir += "||";
-            } else if (i == posicionActual){
-                imprimir +="*°";
-            } else {
-                imprimir += "¬";
-            }
-        }
-        return imprimir;
+    /**
+     * Almacena la posicion del corredor 1 del equipo
+     */
+    private int posicionActualC1;
+
+    /**
+     * Almacena la posicion del corredor 2 del equipo
+     */
+    private int posicionActualC2;
+
+    /**
+     * Almacena la posicion del corredor 3 del equipo
+     */
+    private int posicionActualC3;
+
+    /**
+     * Constructor que recibe los parametros necesarios para inicializar un equipo
+     * 
+     * @param nombre el nombre de equipo
+     */
+    public Equipo(String nombre) {
+        this.setNombre(nombre);
+        this.setPosicionActualC1(0);
+        this.setPosicionActualC2(33);
+        this.setPosicionActualC3(66);
     }
 
+    /**
+     * @return the nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * @param nombre the nombre to set
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getInicio() {
-        return inicio;
+    /**
+     * @return the posicionActualC3
+     */
+    public int getPosicionActualC3() {
+        return posicionActualC3;
     }
 
-    public void setInicio(String inicio) {
-        this.inicio = inicio;
+    /**
+     * @param posicionActualC3 the posicionActualC3 to set
+     */
+    public void setPosicionActualC3(int posicionActualC3) {
+        this.posicionActualC3 = posicionActualC3;
     }
 
-    public int getPosicionActual() {
-        return posicionActual;
+    /**
+     * @return the posicionActualC2
+     */
+    public int getPosicionActualC2() {
+        return posicionActualC2;
     }
 
-    public void setPosicionActual(int posicionActual) {
-        this.posicionActual = posicionActual;
-    }    
+    /**
+     * @param posicionActualC2 the posicionActualC2 to set
+     */
+    public void setPosicionActualC2(int posicionActualC2) {
+        this.posicionActualC2 = posicionActualC2;
+    }
+
+    /**
+     * @return the posicionActualC1
+     */
+    public int getPosicionActualC1() {
+        return posicionActualC1;
+    }
+
+    /**
+     * @param posicionActualC1 the posicionActualC1 to set
+     */
+    public void setPosicionActualC1(int posicionActualC1) {
+        this.posicionActualC1 = posicionActualC1;
+    }
 }

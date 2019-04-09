@@ -6,26 +6,34 @@
 package com.mycompany.relevos;
 
 /**
- *
- * @author German
+ * Clase que instancia equipos y corredores e inicializa la carrera
+ * @author German Garcia
+ * @author Diego Rodriguez
  */
 public class Principal {
-    
-    Equipo grupo1 = new Equipo("Rojo", "R");
-    Equipo grupo2 = new Equipo("Amarillo", "A");
-    Equipo grupo3 = new Equipo("Verde", "V");
-    
-    Corredor corredor1 = new Corredor(grupo1, "Corredor 1", 0);
-    Corredor corredor2 = new Corredor(grupo1, "Corredor 2", 33);
-    Corredor corredor3 = new Corredor(grupo1, "Corredor 3", 66);
-    Corredor corredor4 = new Corredor(grupo2, "Corredor 4", 0);
-    Corredor corredor5 = new Corredor(grupo2, "Corredor 5", 33);
-    Corredor corredor6 = new Corredor(grupo2, "Corredor 6", 66);
-    Corredor corredor7 = new Corredor(grupo3, "Corredor 7", 0);
-    Corredor corredor8 = new Corredor(grupo3, "Corredor 8", 33);
-    Corredor corredor9 = new Corredor(grupo3, "Corredor 9", 66);
 
+    private static final String ROJO = "\u001b[1;31m";
+    private static final String VERDE = "\u001b[1;32m";
+    private static final String AZUL = "\u001b[1;34m";
+    /**
+     * Método que se encarga de crear los equipos, corredores e inicializa la carrera 
+     */
     public void principal() {
+
+        Equipo equipo1 = new Equipo(ROJO + "Equipo 1");
+        Equipo equipo2 = new Equipo(VERDE + "Equipo 2");
+        Equipo equipo3 = new Equipo(AZUL + "Equipo 3");
+        
+        Corredor corredor1 = new Corredor(0, equipo1);
+        Corredor corredor2 = new Corredor(33, equipo1);
+        Corredor corredor3 = new Corredor(66, equipo1);
+        Corredor corredor4 = new Corredor(0, equipo2);
+        Corredor corredor5 = new Corredor(33, equipo2);
+        Corredor corredor6 = new Corredor(66, equipo2);
+        Corredor corredor7 = new Corredor(0, equipo3);
+        Corredor corredor8 = new Corredor(33, equipo3);
+        Corredor corredor9 = new Corredor(66, equipo3);  
+        
         corredor1.start();
         corredor2.start();
         corredor3.start();
